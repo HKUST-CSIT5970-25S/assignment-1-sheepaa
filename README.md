@@ -109,4 +109,14 @@
 
     According to the table, the **network performance varies significantly** depending on whether instances are deployed within the same region or across different regions.
     
+    Within the same region:
+    
+    - **N. Virginia - N. Virginia:** The TCP bandwidth is **4750 Mbps**, and the RTT is very low at **0.323 ms**, indicating high-speed and low-latency communication.
+    - **Oregon - Oregon:** The TCP bandwidth is slightly lower at **4380 Mbps**, with an even lower RTT of **0.193 ms**, which is expected as intra-region latency is generally minimal.
+    
+    Across different regions (N. Virginia - Oregon):
+    
+    - The TCP bandwidth drops significantly to **461 Mbps**, which is much lower than the intra-region connections.
+    - The RTT increases dramatically to **63.077 ms**, showing that inter-region communication has much higher latency due to physical distance and routing through multiple network hops.
+    
     > Region: US East (N. Virginia), US West (Oregon). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. All instances are `c5.large`. Note: Use public IP address when using iPerf within the same region.
